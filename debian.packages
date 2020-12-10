@@ -1,0 +1,10 @@
+x11vnc
+xvfb
+wget
+curl
+wireshark
+tcpdump
+netcat
+nano
+sudo
+unzip

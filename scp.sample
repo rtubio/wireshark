@@ -1,0 +1,1 @@
+scp -vvv -i /Users/tubiopardavilaricardo/.ssh/google_compute_engine -o CheckHostIP=no -o HostKeyAlias=compute.2464516674005062677 -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=/Users/tubiopardavilaricardo/.ssh/google_compute_known_hosts ritub@34.85.25.252:/tmp/test.dump .

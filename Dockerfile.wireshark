@@ -1,0 +1,20 @@
+FROM x11vnc/desktop:latest
+
+# Environment variables, available even during run
+ENV PYTHONUNBUFFERED 1
+ENV TZ='Asia/Tokyo'
+ARG DEBIAN_FRONTEND=noninteractive
+
+COPY debian.packages /tmp/debian.packages
+
+RUN apt-get update &&\
+    xargs -a /tmp/debian.packages apt-get install -y --no-install-recommends &&\
+    rm -rf /var/lib/apt/lists/*
+
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
+EXPOSE 5900
+EXPOSE 6080
+
+# ENTRYPOINT ["/bin/bash"]
+# CMD [ "/usr/local/bin/entry.sh" ]
